@@ -2,6 +2,10 @@
   text-align: left;
 }
 
+.news-list ul {
+  padding-left: 20px;
+}
+
 .featured-news {
   position: relative;
 }
@@ -48,4 +52,15 @@
   cursor: pointer;
   text-decoration: underline;
   opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .featured-news img {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .featured-news .title:after {
+    border-radius: 0;
+  }
 }

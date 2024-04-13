@@ -8,6 +8,16 @@
   margin-top: 60px;
 }
 
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+
+  .App {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .news-tag {
   color: #880202;
 }

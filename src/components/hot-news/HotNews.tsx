@@ -20,7 +20,7 @@ export function HotNews({ news }: { news: NewsEntry[] }) {
 
   return (
     <div>
-      <h3>Fresh off the press 🔥</h3>
+      <h3>Hot News 🔥</h3>
       <Timeline>
         {hotNews.map((news) => {
           const splitTitle = news.title.split(":");
