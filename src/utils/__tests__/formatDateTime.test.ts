@@ -1,4 +1,5 @@
 import { getFormattedTime } from "../formatDateTime";
+
 describe("getFormattedTime", () => {
   const testData = [
     { date: "2023-02-16T06:24:41.220Z", expected: "07:24 a.m." },

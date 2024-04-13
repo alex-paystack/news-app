@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a timeline correctly 1`] = `
+<div
+  class="timeline"
+  data-testid="timeline"
+>
+  <ol>
+    <li
+      class="timeline-item"
+    >
+      <div
+        class="timeline-dot"
+      >
+        <div />
+      </div>
+      <div
+        class="timeline-time"
+      >
+        11:30
+      </div>
+      <div
+        class="timeline-content"
+      >
+        Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.
+      </div>
+    </li>
+  </ol>
+</div>
+`;

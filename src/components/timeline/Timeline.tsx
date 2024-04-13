@@ -1,20 +1,39 @@
-import React from "react";
+import React, { HtmlHTMLAttributes } from "react";
 import "./timeline.css";
 
-export function Timeline({ children }: { children: React.ReactNode }) {
+interface TimelinePrimitiveProps extends HtmlHTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+}
+
+interface TimelineItemProps extends HtmlHTMLAttributes<HTMLLIElement> {
+  children: React.ReactNode;
+}
+
+export function Timeline({ children, ...props }: TimelinePrimitiveProps) {
   return (
-    <div className="timeline">
+    <div {...props} className="timeline">
       <ol>{children}</ol>
     </div>
   );
 }
 
-export function TimelineItem({ children }: { children: React.ReactNode }) {
-  return <li className="timeline-item">{children}</li>;
+export function TimelineItem({ children, ...props }: TimelineItemProps) {
+  return (
+    <li {...props} className="timeline-item">
+      {children}
+    </li>
+  );
 }
 
-export function TimelineContent({ children }: { children: React.ReactNode }) {
-  return <div className="timeline-content">{children}</div>;
+export function TimelineContent({
+  children,
+  ...props
+}: TimelinePrimitiveProps) {
+  return (
+    <div {...props} className="timeline-content">
+      {children}
+    </div>
+  );
 }
 
 export function TimelineDot() {
@@ -25,6 +44,6 @@ export function TimelineDot() {
   );
 }
 
-export function TimelineTime({ children }: { children: React.ReactNode }) {
-  return <div className="timeline-time">{children}</div>;
+export function TimelineTime({ children, ...props }: TimelinePrimitiveProps) {
+  return <div {...props} className="timeline-time">{children}</div>;
 }
