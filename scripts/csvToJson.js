@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 function convertCsvToJson(csvString) {
   const rows = csvString.split(/\r?\n/);
@@ -26,8 +26,8 @@ function convertCsvToJson(csvString) {
   return jsonData;
 }
 
-const csvFilePath = path.join(__dirname, '..', 'src', 'data', 'newsSource.csv');
-const outputPath = path.join(__dirname, '..', 'src', 'data', 'newsSource.json')
+const csvFilePath = path.join(__dirname, "..", "src", "data", "newsSource.csv");
+const outputPath = path.join(__dirname, "..", "src", "data", "newsSource.json");
 
 fs.readFile(csvFilePath, "utf8", (err, csvData) => {
   if (err) {
@@ -40,8 +40,8 @@ fs.readFile(csvFilePath, "utf8", (err, csvData) => {
   try {
     const jsonString = JSON.stringify(jsonData, null, 2);
     fs.writeFileSync(outputPath, jsonString);
-
+    console.log("Successfully created json file from csv");
   } catch (error) {
-    throw new Error('Error writing to file:', error);
+    throw new Error("Error writing to file:", error);
   }
 });
