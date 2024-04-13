@@ -19,7 +19,9 @@ export function NewsList({ news }: { news: NewsEntry[] }) {
           src="./assets/image.avif"
           alt="Rescue after fatal avalanche in Austria was difficult due to the threat of new avalanches"
         />
-        <h2 className="title">{firstNewsEntry.title}</h2>
+        <div className="title">
+          <h2>{firstNewsEntry.title}</h2>
+        </div>
       </div>
       <ul>
         {otherNews.map((news) => {
