@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { NewsEntry } from "../../types";
 import { sortNews } from "../../utils/sortNews";
 import { getElementHeightWithMargin } from "../../utils/dom";
+import image from '../../assets/image.avif';
+
 import "./news-list.css";
 
 // TODO: Clean up image loading
@@ -44,8 +46,9 @@ export function NewsList({ news }: { news: NewsEntry[] }) {
     <div className="news-list">
       <div className="featured-news" id="featured-news">
         <img
-          src="./assets/image.avif"
+          src={image}
           alt="Rescue after fatal avalanche in Austria was difficult due to the threat of new avalanches"
+          height="400"
         />
         <div className="title">
           <h2>{firstNewsEntry.title}</h2>
