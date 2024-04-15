@@ -1,6 +1,6 @@
 # News App
 
-An app that shows the news
+An app that shows the news. Deployed version can be found [here](https://alex-paystack.github.io/news-app/)
 
 ## Setup
 

@@ -5,6 +5,7 @@ import { sortNews } from "../../utils/sortNews";
 import { getElementHeightWithMargin } from "../../utils/dom";
 import "./news-list.css";
 
+// TODO: Clean up image loading
 export function NewsList({ news }: { news: NewsEntry[] }) {
   const sortedNews = sortNews(news, {
     criterion: "popularity",
@@ -13,6 +14,7 @@ export function NewsList({ news }: { news: NewsEntry[] }) {
 
   const [visibleItems, setVisibleItems] = useState(sortedNews.length);
 
+  // Scale the number of news items shown based on window height
   useEffect(() => {
     const featuredNews = document.getElementById("featured-news");
     const newsItem = document.getElementById("news-item-0");

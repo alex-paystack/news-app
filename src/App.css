@@ -13,7 +13,7 @@
     display: none;
   }
 
-  .App {
+  .app {
     grid-template-columns: repeat(2, 1fr);
   }
 }
