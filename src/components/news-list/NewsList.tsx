@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { NewsEntry } from "../../types";
 import { sortNews } from "../../utils/sortNews";
 import { getElementHeightWithMargin } from "../../utils/dom";
-import image from '../../assets/image.avif';
+import image from "../../assets/image.avif";
 
 import "./news-list.css";
 
@@ -15,15 +15,15 @@ export function NewsList({ news }: { news: NewsEntry[] }) {
   });
 
   const [visibleItems, setVisibleItems] = useState(sortedNews.length);
+  const featuredNewsRef = useRef<HTMLDivElement>(null);
+  const newsItemsRef = useRef<HTMLLIElement[]>([]);
 
   // Scale the number of news items shown based on window height
   useEffect(() => {
-    const featuredNews = document.getElementById("featured-news");
-    const newsItem = document.getElementById("news-item-0");
-    const newsItemHeight = getElementHeightWithMargin(newsItem as HTMLElement);
+    const newsItemHeight = getElementHeightWithMargin(newsItemsRef.current[0]);
 
     const getAvailableNewsListHeight = () => {
-      return window.innerHeight - (featuredNews?.offsetHeight || 0);
+      return window.innerHeight - (featuredNewsRef.current?.offsetHeight || 0);
     };
 
     const getVisibleItemsCount = () => {
@@ -44,7 +44,7 @@ export function NewsList({ news }: { news: NewsEntry[] }) {
 
   return (
     <div className="news-list">
-      <div className="featured-news" id="featured-news">
+      <div className="featured-news" ref={featuredNewsRef}>
         <img
           src={image}
           alt="Rescue after fatal avalanche in Austria was difficult due to the threat of new avalanches"
@@ -59,7 +59,14 @@ export function NewsList({ news }: { news: NewsEntry[] }) {
           {otherNews.map((news, index) => {
             const splitTitle = news.title.split(":");
             return (
-              <li key={news.id} id={`news-item-${index}`}>
+              <li
+                key={news.id}
+                ref={(node) => {
+                  if (node) {
+                    newsItemsRef.current.push(node);
+                  }
+                }}
+              >
                 {splitTitle.length > 1 ? (
                   <>
                     <span className="news-tag">{splitTitle[0]}</span>
