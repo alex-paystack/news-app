@@ -7,7 +7,7 @@ import { HotNews } from "./components/hot-news/HotNews";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <main className="main">
         <NewsList news={news} />
       </main>

@@ -6,8 +6,32 @@
   padding-left: 20px;
 }
 
+.load-all-news {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.load-all-news button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #d1d5db;
+  padding: 8px 12px;
+  height: 36px;
+  background: #fff;
+  font-weight: bold;
+}
+
+.load-all-news button:hover {
+  background: #f3f4f6;
+}
+
 .featured-news {
   position: relative;
+  cursor: pointer;
 }
 
 .featured-news img {
