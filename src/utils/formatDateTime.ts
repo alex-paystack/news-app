@@ -9,6 +9,8 @@ export function getFormattedTime(dateTime: string) {
   }
 
   const meridiem = hours >= 12 ? "p.m." : "a.m.";
+
+  // use 12 in place of 0
   const roundedHours = hours % 12 ? hours : 12;
   const formattedHours = roundedHours < 10 ? `0${roundedHours}` : roundedHours
   const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;

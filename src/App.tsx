@@ -1,9 +1,8 @@
-import React from "react";
-
-import "./App.css";
 import { NewsList } from "./components/news-list/NewsList";
 import news from "./data/newsSource.json";
 import { HotNews } from "./components/hot-news/HotNews";
+
+import "./App.css";
 
 function App() {
   return (

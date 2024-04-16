@@ -1,5 +1,3 @@
-import React from "react";
-
 import { NewsEntry } from "../../types";
 import {
   Timeline,
@@ -12,11 +10,11 @@ import { sortNews } from "../../utils/sortNews";
 import { getFormattedTime } from "../../utils/formatDateTime";
 
 export function HotNews({ news }: { news: NewsEntry[] }) {
-  // Only render the first five entries
+  // Consider the five most recent items as the hottest news
   const hotNews = sortNews(news, {
     criterion: "timestamp",
     order: "descending",
-  }).slice(0, 4);
+  }).slice(0, 5);
 
   return (
     <div>

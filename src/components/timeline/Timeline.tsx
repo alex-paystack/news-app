@@ -1,4 +1,4 @@
-import React, { HtmlHTMLAttributes } from "react";
+import type { HtmlHTMLAttributes } from "react";
 import "./timeline.css";
 
 interface TimelinePrimitiveProps extends HtmlHTMLAttributes<HTMLDivElement> {

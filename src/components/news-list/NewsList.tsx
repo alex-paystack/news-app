@@ -3,11 +3,10 @@ import { useEffect, useState, useRef } from "react";
 import { NewsEntry } from "../../types";
 import { sortNews } from "../../utils/sortNews";
 import { getElementHeightWithMargin } from "../../utils/dom";
-import image from "../../assets/image.avif";
 
+import image from "../../assets/image.avif";
 import "./news-list.css";
 
-// TODO: Clean up image loading
 export function NewsList({ news }: { news: NewsEntry[] }) {
   const sortedNews = sortNews(news, {
     criterion: "popularity",
@@ -23,6 +22,10 @@ export function NewsList({ news }: { news: NewsEntry[] }) {
     const newsItemHeight = getElementHeightWithMargin(newsItemsRef.current[0]);
 
     const getAvailableNewsListHeight = () => {
+      /**
+       * consider the available height for news listing to be
+       * the delta between the height of the window and that of the featured article
+       */
       return window.innerHeight - (featuredNewsRef.current?.offsetHeight || 0);
     };
 
@@ -47,8 +50,9 @@ export function NewsList({ news }: { news: NewsEntry[] }) {
       <div className="featured-news" ref={featuredNewsRef}>
         <img
           src={image}
-          alt="Rescue after fatal avalanche in Austria was difficult due to the threat of new avalanches"
-          height="400"
+          alt="Two helicopters and a number of vehicles on a narrow road with snow on either side"
+          height={400}
+          width={650}
         />
         <div className="title">
           <h2>{firstNewsEntry.title}</h2>

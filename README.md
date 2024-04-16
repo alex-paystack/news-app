@@ -1,6 +1,6 @@
 # News App
 
-An app that shows the news. Deployed version can be found [here](https://alex-paystack.github.io/news-app/)
+An app that shows the news. The deployed version can be found [here](https://alex-paystack.github.io/news-app/)
 
 ## Setup
 
@@ -30,7 +30,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Converts the `csv` data file to `json` and runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000/news-app](http://localhost:3000/news-app) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
